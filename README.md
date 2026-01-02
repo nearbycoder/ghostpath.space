@@ -1,16 +1,49 @@
-# React + Vite
+# GhostPath 👻
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**GhostPath** is a daily puzzle game where you navigate an invisible maze.
 
-Currently, two official plugins are available:
+![GhostPath Preview](public/preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Play
 
-## React Compiler
+- **Goal**: Navigate from the top-left to the bottom-right.
+- **Mechanics**:
+  - Click adjacent tiles to move.
+  - **Traps are invisible**. Hitting one reveals it and costs a life.
+  - You have **3 Lives**.
+- **Daily Challenge**: Everyone gets the same grid every day (seeded by date).
+- **Streaks**: Come back daily to build your streak!
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- 🧩 **Daily Puzzle**: Unique grid generated every day.
+- 💾 **Persistence**: Progress and stats saved automatically.
+- 🔥 **Streaks**: Track your daily wins.
+- 📱 **Responsive**: Works on mobile and desktop.
+- 🎨 **Theme**: Sleek dark/neon aesthetic.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- **Framework**: React + Vite
+- **Styling**: Tailwind CSS (v4)
+- **Icons**: Lucide React
+- **Runtime**: Bun
+
+## Development
+
+1. Install dependencies:
+
+   ```bash
+   bun install
+   ```
+
+2. Run dev server:
+
+   ```bash
+   bun run dev
+   ```
+
+3. Build for production:
+   ```bash
+   bun run build
+   ```
