@@ -1,6 +1,6 @@
 export const GRID_SIZE = 6;
 export const TRAP_COUNT = 15; // Number of traps
-export const LIVES = 3;
+export const LIVES = 5;
 
 // Simple seeded random number generator (Mulberry32)
 function mulberry32(a) {
