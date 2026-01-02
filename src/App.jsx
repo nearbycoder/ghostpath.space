@@ -27,7 +27,7 @@ function App() {
       status === 'won' ? '🏆 Won' : '💀 Lost'
     } (${lives}/${LIVES} Lives)\n🔥 Streak: ${
       stats.currentStreak
-    }\n\nPlay now!`;
+    }\n\nPlay now: https://ghostpath.space`;
     navigator.clipboard.writeText(text).then(() => {
       toast.success('Result copied to clipboard!');
     });
@@ -91,7 +91,32 @@ function App() {
                 className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg font-medium transition-colors"
               >
                 <Share2 className="w-4 h-4" />
-                Share
+                Copy
+              </button>
+              <button
+                onClick={() => {
+                  const text = `GhostPath ${date}\n${
+                    status === 'won' ? '🏆 Won' : '💀 Lost'
+                  } (${lives}/${LIVES} Lives)\n🔥 Streak: ${
+                    stats.currentStreak
+                  }\n\nPlay now: https://ghostpath.space`;
+                  window.open(
+                    `https://x.com/intent/tweet?text=${encodeURIComponent(
+                      text
+                    )}`,
+                    '_blank'
+                  );
+                }}
+                className="flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-900 rounded-lg font-medium transition-colors border border-gray-800"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4 fill-current text-white"
+                  aria-hidden="true"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                Post
               </button>
               {/* Dev only reset */}
               {/* <button onClick={resetGame} className="p-2 bg-gray-700 rounded-lg hover:bg-gray-600">
