@@ -21,6 +21,40 @@ function App() {
     }
   }, [status]);
 
+  // Keyboard controls
+  useEffect(() => {
+    if (status !== 'playing') return;
+
+    const handleKeyDown = (e) => {
+      const { x, y } = state.player;
+      switch (e.key) {
+        case 'ArrowUp':
+        case 'w':
+        case 'W':
+          movePlayer(x, y - 1);
+          break;
+        case 'ArrowDown':
+        case 's':
+        case 'S':
+          movePlayer(x, y + 1);
+          break;
+        case 'ArrowLeft':
+        case 'a':
+        case 'A':
+          movePlayer(x - 1, y);
+          break;
+        case 'ArrowRight':
+        case 'd':
+        case 'D':
+          movePlayer(x + 1, y);
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [state.player, status, movePlayer]);
+
   const handleShare = () => {
     // Generate emoji grid
     const text = `GhostPath ${date}\n${
